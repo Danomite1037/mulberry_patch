@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  /* background-image: radial-gradient(circle, white, white, lightpink); */
+}
+
+body{
+  background-image: radial-gradient(circle, white, white, lightpink);
+}
