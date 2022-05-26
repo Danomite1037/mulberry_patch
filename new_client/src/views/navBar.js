@@ -32,20 +32,20 @@ const NavBar = (props) => {
                   <li><Link className="dropdown-item" to={"/SpecialtyCookies"}>Custom Events</Link></li>
                 </ul>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to={"/SpecialtyCookies"}>Specialty Cookies</Link>
+              <li className="nav-item d-flex justify-content-center">
+                <Link className="nav-link" style={{ width: "140px" }} to={"/SpecialtyCookies"}>Specialty Cookies</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={"/Orders"}>Orders</Link>
               </li>
             </ul>
-            <div className="mx-5 w-50">
-              <form className="d-flex w-50 mx-5">
+            <div style={{ width: "450px" }}>
+              <form className="d-flex mx-5">
                 <input className="form-control mx-3 " type="search" placeholder="Search Cookies" aria-label="Search"/>
                 <button className="btn btn-outline-success " type="submit">Search</button>
               </form>
             </div>
-            <ul className="navbar-nav mb-2 mb-lg-0">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to={"/login"}>Login</Link> 
               </li> 

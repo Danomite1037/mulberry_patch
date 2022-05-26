@@ -31,7 +31,7 @@ function App() {
         <Route exact path="/register">
           <Register />
         </Route>
-        <Route exact path="/FourthJulyCookie">
+        <Route exact path="/FourthJulyCookies">
           <FourthJulyCookie/>
         </Route>
         <Route exact path="/EasterCookies">
@@ -43,7 +43,7 @@ function App() {
         <Route exact path="/HolloweenCookies">
           <HolloweenCookies/>
         </Route>
-        <Route exact path="/MothersDayCookie">
+        <Route exact path="/MothersDayCookies">
             <MothersDayCookie/>
         </Route>
         <Route exact path="/NewYearsCookies">
