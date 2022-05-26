@@ -25,7 +25,15 @@ const Register = (props) => {
     // Handler for submitting the form and the info
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        // axios call to go here
+        // axios call to go here / NEEDS EDITED FOR PASSWORD HASH
+        // axios.post("http://localhost:8000/api/user/create", form)
+        //     .then(res => {
+        //         // Use history to redirect to the home page
+        //         history.push("/");
+        //     })
+        //     .catch(err => {
+        //         setErrors(err.response.data.err.errors);
+        //     })
     }
     return (
         <div>
@@ -36,28 +44,28 @@ const Register = (props) => {
                         <div className="form-floating me-2 w-100">
                             <input name='firstName' type="text" className="form-control" id="floatingInput" placeholder="First Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">First Name</label>
-                            <div className='invalid-feedback'>Please Enter a First Name</div>
+                            <span className='alert-danger'>{errors.name && errors.name.message}</span>
                         </div>
                         <div className="form-floating ms-2 w-100">
                             <input name='lastName' type="text" className="form-control" id="floatingInput" placeholder="Last Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">Last Name</label>
-                            <div className='invalid-feedback'>Please Enter a Last Name</div>
+                            <span className='alert-danger'>{errors.name && errors.name.message}</span>
                         </div>
                     </div>
                     <div className="form-floating mb-3">
                         <input name='email' type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={onChangeHandler}/>
                         <label htmlFor="floatingInput">Email address</label>
-                        <div className='invalid-feedback'>Please Enter a Email</div>
+                        <span className='alert-danger'>{errors.name && errors.name.message}</span>
                     </div>
                     <div className="form-floating mb-3">
                         <input name='password' type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={onChangeHandler}/>
                         <label htmlFor="floatingPassword">Password</label>
-                        <div className='invalid-feedback'>Please Enter a Password</div>
+                        <span className='alert-danger'>{errors.name && errors.name.message}</span>
                     </div>
                     <div className="form-floating mb-3">
                         <input name='confirm' type="password" className="form-control" id="floatingPassword" placeholder="Confirm Password"/>
                         <label htmlFor="floatingPassword">Confirm Password</label>
-                        <div className='invalid-feedback'>Please Confirm your Password</div>
+                        <span className='alert-danger'>{errors.name && errors.name.message}</span>
                     </div>
                     <div className="mb-3">
                         <input className='me-2' type="checkbox"/>

@@ -6,7 +6,7 @@ import MPLogo from '../imgs/TheMulberryPatchLogo.jpg';
 
 const Home = (props) => {
     return (
-        <div className='w-75 mx-auto'>
+        <div className='w-75 h-auto mx-auto'>
             <div className='d-flex justify-content-center'>
                 <img src={MPLogo} alt="Logo" style={{width: "100px"}}/>
                 <h1>The Mulberry Patch</h1>
@@ -50,7 +50,7 @@ const Home = (props) => {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-            <div>
+            <div className='my-4'>
                 <h4>Special Messages / Contact Info</h4>
                 <p>If you have any questions or updates for orders please call/text Wendy @ (304)669-5233</p>
             </div>
