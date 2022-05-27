@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Login = (props) => {
     const [form, setForm] = useState();
+    const [errors, setErrors] = useState({});
+    const history = useHistory();
+    const onChangeHandler = (event) => {
+        setForm({
+            ...form,
+            [event.target.name]: event.target.value
+        })
+    }
     return (
         <div>
             <h1 className='display-4 my-5'>Login</h1>
@@ -10,11 +18,11 @@ const Login = (props) => {
                 <form>
                     <div className="form-floating mb-3">
                         <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com"/>
-                        <label for="floatingInput">Email address</label>
+                        <label htmlFor="floatingInput">Email address</label>
                     </div>
                     <div className="form-floating mb-3">
                         <input type="password" className="form-control" id="floatingPassword" placeholder="Password"/>
-                        <label for="floatingPassword">Password</label>
+                        <label htmlFor="floatingPassword">Password</label>
                     </div>
                     <input className='btn btn-primary' type="submit"/>
                 </form>
