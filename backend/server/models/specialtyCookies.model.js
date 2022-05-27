@@ -7,7 +7,7 @@ const specialtyCookiesSchema = new mongoose.Schema({
     },
     price:{
         type : mongoose.Decimal128,
-        required :  [true, "You cain't lr=eave this field blank"],
+        required :  [true, "You cain't leave this field blank"],
         
     },
     img:{
