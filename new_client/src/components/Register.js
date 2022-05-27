@@ -9,6 +9,7 @@ const Register = (props) => {
         lastName: "",
         email: "",
         password: "",
+        confirm: "",
         subscribe: false
     });
     // Errors for validations
@@ -22,18 +23,26 @@ const Register = (props) => {
             [event.target.name]: event.target.value
         })
     }
+    // Password compare
+    const passValid = (input) => {
+        if(input.password !== input.confirm){
+            return false;
+        } else {
+            return true;
+        }
+    }
     // Handler for submitting the form and the info
     const onSubmitHandler = (event) => {
         event.preventDefault();
         // axios call to go here / NEEDS EDITED FOR PASSWORD HASH
-        // axios.post("http://localhost:8000/api/user/create", form)
-        //     .then(res => {
-        //         // Use history to redirect to the home page
-        //         history.push("/");
-        //     })
-        //     .catch(err => {
-        //         setErrors(err.response.data.err.errors);
-        //     })
+        axios.post("http://localhost:8000/api/user/create", form)
+            .then(res => {
+                // Use history to redirect to the home page
+                history.push("/");
+            })
+            .catch(err => {
+                setErrors(err.response.data.err.errors);
+            })
     }
     return (
         <div>
@@ -42,36 +51,36 @@ const Register = (props) => {
                 <form onSubmit={onSubmitHandler}>
                     <div className='d-flex mb-3'>
                         <div className="form-floating me-2 w-100">
-                            <input name='firstName' type="text" className="form-control" id="floatingInput" placeholder="First Name" onChange={onChangeHandler}/>
+                            <input name='firstName' type="text" className="form-control" id="floatingFirstName" placeholder="First Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">First Name</label>
-                            <span className='alert-danger'>{errors.name && errors.name.message}</span>
+                            <span className='alert-danger'>{errors.firstName && errors.firstName.message}</span>
                         </div>
                         <div className="form-floating ms-2 w-100">
-                            <input name='lastName' type="text" className="form-control" id="floatingInput" placeholder="Last Name" onChange={onChangeHandler}/>
+                            <input name='lastName' type="text" className="form-control" id="floatingLastName" placeholder="Last Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">Last Name</label>
-                            <span className='alert-danger'>{errors.name && errors.name.message}</span>
+                            <span className='alert-danger'>{errors.lastName && errors.lastName.message}</span>
                         </div>
                     </div>
                     <div className="form-floating mb-3">
-                        <input name='email' type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={onChangeHandler}/>
+                        <input name='email' type="email" className="form-control" id="floatingEmail" placeholder="name@example.com" onChange={onChangeHandler}/>
                         <label htmlFor="floatingInput">Email address</label>
-                        <span className='alert-danger'>{errors.name && errors.name.message}</span>
+                        <span className='alert-danger'>{errors.email && errors.email.message}</span>
                     </div>
                     <div className="form-floating mb-3">
                         <input name='password' type="password" className="form-control" id="floatingPassword" placeholder="Password" onChange={onChangeHandler}/>
                         <label htmlFor="floatingPassword">Password</label>
-                        <span className='alert-danger'>{errors.name && errors.name.message}</span>
+                        <span className='alert-danger'>{errors.password && errors.password.message}</span>
                     </div>
                     <div className="form-floating mb-3">
-                        <input name='confirm' type="password" className="form-control" id="floatingPassword" placeholder="Confirm Password"/>
+                        <input name='confirm' type="password" className="form-control" id="floatingConfirm" placeholder="Confirm Password"/>
                         <label htmlFor="floatingPassword">Confirm Password</label>
-                        <span className='alert-danger'>{errors.name && errors.name.message}</span>
+                        {passValid(form.confirm) && form.confirm !== form.password && <span className="alert-danger">Passwords do not match</span>}
                     </div>
                     <div className="mb-3">
                         <input className='me-2' type="checkbox"/>
                         <label htmlFor="subscribe">Subscribe to newsletter?</label>
                     </div>
-                    <div class="col-12">
+                    <div className="col-12">
                         <button className='btn btn-primary'>Register User</button>
                     </div>
                 </form>
