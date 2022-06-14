@@ -72,12 +72,12 @@ const Register = (props) => {
                         <span className='alert-danger'>{errors.password && errors.password.message}</span>
                     </div>
                     <div className="form-floating mb-3">
-                        <input name='confirm' type="password" className="form-control" id="floatingConfirm" placeholder="Confirm Password"/>
-                        <label htmlFor="floatingPassword">Confirm Password</label>
+                        <input name='confirm' type="password" className="form-control" id="floatingConfirm" placeholder="Confirm Password" onChange={onChangeHandler}/>
+                        <label htmlFor="floatingConfirm">Confirm Password</label>
                         {passValid(form.confirm) && form.confirm !== form.password && <span className="alert-danger">Passwords do not match</span>}
                     </div>
                     <div className="mb-2">
-                        <input className='me-2' type="checkbox"/>
+                        <input name='subscribe' className='me-2' type="checkbox" onChange={onChangeHandler}/>
                         <label htmlFor="subscribe">Subscribe to newsletter?</label>
                     </div>
                     <div className="col-12">
