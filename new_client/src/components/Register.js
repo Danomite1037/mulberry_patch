@@ -76,7 +76,7 @@ const Register = (props) => {
                         <label htmlFor="floatingPassword">Confirm Password</label>
                         {passValid(form.confirm) && form.confirm !== form.password && <span className="alert-danger">Passwords do not match</span>}
                     </div>
-                    <div className="mb-3">
+                    <div className="mb-2">
                         <input className='me-2' type="checkbox"/>
                         <label htmlFor="subscribe">Subscribe to newsletter?</label>
                     </div>
@@ -84,8 +84,8 @@ const Register = (props) => {
                         <button className='btn btn-primary'>Register User</button>
                     </div>
                 </form>
+                <p className='mt-2'>Already have an account? Login <Link to={"/login"}>here</Link></p>
             </div>
-            <p>Already have an account? Login <Link to={"/login"}>here</Link></p>
         </div>
     )
 }

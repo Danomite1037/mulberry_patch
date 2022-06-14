@@ -26,7 +26,7 @@ const Login = (props) => {
                     </div>
                     <input className='btn btn-primary' type="submit"/>
                 </form>
-                <p>New to the group? Register <Link to={"/register"}>Here</Link></p>
+                <p className='mt-2'>New to the group? Register <Link to={"/register"}>Here</Link></p>
             </div>
         </div>
     )
