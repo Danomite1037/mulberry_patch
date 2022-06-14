@@ -16,11 +16,11 @@ const Register = (props) => {
     const [errors, setErrors] = useState({});
     // History option for redirects
     const history = useHistory();
-    // Handler for anything that changes in the inputs
+    // Handler for input changes
     const onChangeHandler = (event) => {
         setForm({
             ...form,
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.type === "checkbox" ? event.target.checked : event.target.value
         })
     }
     // Password compare
@@ -53,12 +53,12 @@ const Register = (props) => {
                         <div className="form-floating me-2 w-100">
                             <input name='firstName' type="text" className="form-control" id="floatingFirstName" placeholder="First Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">First Name</label>
-                            <span className='alert-danger'>{errors.firstName && errors.firstName.message}</span>
+                            <span className='alert-danger'>{errors.email && errors.email.message}</span>
                         </div>
                         <div className="form-floating ms-2 w-100">
                             <input name='lastName' type="text" className="form-control" id="floatingLastName" placeholder="Last Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">Last Name</label>
-                            <span className='alert-danger'>{errors.lastName && errors.lastName.message}</span>
+                            <span className='alert-danger'>{errors.password && errors.password.message}</span>
                         </div>
                     </div>
                     <div className="form-floating mb-3">

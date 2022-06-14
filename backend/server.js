@@ -18,4 +18,9 @@ require("./server/routes/orders.routes")(app);
 require("./server/routes/seasonalCookies.routes")(app);
 require("./server/routes/specialtyCookies.routes")(app);
 
-app.listen(port, ()=>console.log(`running on port ${port}`));
+
+const server = app.listen(port, ()=>console.log(`running on port ${port}`));
+const io = require('socket.io')(server, { cors: true });
+io.on("connection", socket => {
+    console.log(socket.id);
+});
