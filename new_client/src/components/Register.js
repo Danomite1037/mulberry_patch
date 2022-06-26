@@ -53,12 +53,12 @@ const Register = (props) => {
                         <div className="form-floating me-2 w-100">
                             <input name='firstName' type="text" className="form-control" id="floatingFirstName" placeholder="First Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">First Name</label>
-                            <span className='alert-danger'>{errors.email && errors.email.message}</span>
+                            <span className='alert-danger'>{errors.firstName && errors.firstName.message}</span>
                         </div>
                         <div className="form-floating ms-2 w-100">
                             <input name='lastName' type="text" className="form-control" id="floatingLastName" placeholder="Last Name" onChange={onChangeHandler}/>
                             <label htmlFor="floatingInput">Last Name</label>
-                            <span className='alert-danger'>{errors.password && errors.password.message}</span>
+                            <span className='alert-danger'>{errors.lastName && errors.lastName.message}</span>
                         </div>
                     </div>
                     <div className="form-floating mb-3">

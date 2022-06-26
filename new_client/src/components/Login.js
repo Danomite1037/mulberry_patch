@@ -39,12 +39,12 @@ const Login = (props) => {
                     <div className="form-floating mb-3">
                         <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" onChange={onChangeHandler}/>
                         <label htmlFor="floatingInput">Email address</label>
-                        <span className='alert-danger'>{errors.firstName && errors.firstName.message}</span>
+                        <span className='alert-danger'>{errors.email && errors.email.message}</span>
                     </div>
                     <div className="form-floating mb-3">
                         <input type="password" className="form-control" id="floatingPassword" placeholder="Password"  onChange={onChangeHandler}/>
                         <label htmlFor="floatingPassword">Password</label>
-                        <span className='alert-danger'>{errors.firstName && errors.firstName.message}</span>
+                        <span className='alert-danger'>{errors.password && errors.password.message}</span>
                     </div>
                     <input className='btn btn-primary' type="submit"/>
                 </form>
